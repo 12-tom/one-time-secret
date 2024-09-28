@@ -16,10 +16,9 @@ const conString: string = process.env.DATABASE_URL as string;
 const client = new pg.Client(conString);
 client.connect();
 
-const createUrl = () => {
-  let randomID = v4();
-  const randomUrl = "http:localhost:5173/secret/" + randomID;
-  return randomUrl;
+const createID = () => {
+  const  randomID = v4();
+  return randomID;
 };
 
 app.post("/", (req: Request, res: Response) => {
@@ -27,10 +26,11 @@ app.post("/", (req: Request, res: Response) => {
   if (!message) {
     return res.status(403).send("Token is required");
   }
-  const url = createUrl();
+  const randomID = createID();
+  const url = `http:localhost:5173/secret/` + randomID;
 
   client.query("INSERT INTO message_url(url, message) values($1, $2)", [
-    url,
+    randomID,
     message,
   ]);
 

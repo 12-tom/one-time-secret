@@ -4,12 +4,15 @@ import { useGetMessage } from "../api/useGetMessage";
 
 export const SecretPage = () => {
   const [message, setMessage] = useState<string>("")
-  const { mutate: getMessage, data } = useGetMessage();
-  getMessage();
+  const { mutate: getMessage} = useGetMessage();
   
   useEffect(() => {
-    setMessage(data);
-  }, [data]);
+    getMessage(undefined, {
+      onSuccess: (data) => {
+        setMessage(data)
+      }
+    });
+  }, []);
 
   return (
     <>

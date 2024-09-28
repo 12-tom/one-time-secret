@@ -110,7 +110,7 @@ const appRouter = createBrowserRouter([
     element: <Layout children />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "secret", element: <SecretPage /> },
+      { path: "secret/:url", element: <SecretPage /> },
     ],
   },
 ]);
