@@ -18,7 +18,7 @@ client.connect();
 
 const createUrl = () => {
   let randomID = v4();
-  const randomUrl = "http:localhost:5173/" + randomID;
+  const randomUrl = "http:localhost:5173/secret/" + randomID;
   return randomUrl;
 };
 
@@ -39,6 +39,7 @@ app.post("/", (req: Request, res: Response) => {
 
 app.get("/secret/:url", (req: Request, res: Response) => {
   const url = req.params.url;
+  console.log(url);
   const currentUrl = client.query(
     `SELECT message FROM message_url WHERE url IN ${url}`
   );
