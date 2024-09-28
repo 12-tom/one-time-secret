@@ -12,7 +12,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 
     useEffect(() => {
         if (location.pathname.includes('/secret')) {
-            setLink("/secret")
+            setLink("/secret/:url")
         } else {
             setLink("/")
         }
