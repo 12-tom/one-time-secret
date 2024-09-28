@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+
