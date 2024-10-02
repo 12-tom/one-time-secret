@@ -3,5 +3,5 @@ export type SaveResDto = {
 };
 
 export type GetResDto = {
-  msg: string| null;
+  msg: string| unknown
 };
