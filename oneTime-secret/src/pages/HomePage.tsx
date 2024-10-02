@@ -25,6 +25,7 @@ export const HomePage = () => {
 
   const handleUrl = () => {
     setUrl(undefined)
+    setMessage("")
   }
 
   const handleCopy = async () => {
