@@ -4,7 +4,7 @@ import { Dialect, Sequelize } from "sequelize";
 dotenv.config();
 
 export const sequelize = new Sequelize(process.env.DATABASE_URL as string, {
-  dialect: process.env.Db_TYPE as Dialect,
+  dialect: process.env.DB_TYPE as Dialect,
   logging: false,
   define: {
     underscored: true,
