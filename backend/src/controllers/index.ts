@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { saveMessage, getUrl } from "../services";
+import { getUrl, saveMessage } from "../services";
 
 export const save = async (req: Request, res: Response) => {
   const message = req.body.data;
@@ -9,6 +9,11 @@ export const save = async (req: Request, res: Response) => {
 
 export const get = async (req: Request, res: Response) => {
   const id = req.params.id;
+
+  if (!id) {
+    return res.json({ error: "Id is required" });
+  }
+
   const result = await getUrl(id);
   res.json(result.msg);
 };

@@ -1,4 +1,4 @@
-import { DataTypes, Sequelize } from "sequelize";
+import { DataTypes } from "sequelize";
 import { sequelize } from "../../config/database";
 
 const Message = sequelize.define("message", {
@@ -14,13 +14,13 @@ const Message = sequelize.define("message", {
   },
   created_at: {
     type: DataTypes.DATE,
-      allowNull: false,
+    allowNull: false,
     defaultValue: Date.now(),
   },
   updated_at: {
     type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: Date.now(),
+    allowNull: false,
+    defaultValue: Date.now(),
   },
 });
 

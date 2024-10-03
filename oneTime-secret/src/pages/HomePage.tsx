@@ -36,7 +36,7 @@ export const HomePage = () => {
         setIsCopied(false);
       }, 2000);
     } catch (err) {
-      console.log("Failed to copy:", err);
+      console.error("Failed to copy:", err);
     }
   };
 

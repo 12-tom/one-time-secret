@@ -1,9 +1,9 @@
-import { v4 } from "uuid";
-import { GetResDto, SaveResDto } from "../dto";
-import Message from "../db/models/message";
 import { Model } from "sequelize";
+import { v4 } from "uuid";
+import Message from "../db/models/message";
+import { GetResDto, SaveResDto } from "../dto";
 
-const baseURL = "localhost:5173/secret";
+const baseURL = process.env.BASEURL;
 
 const createID = () => v4();
 
