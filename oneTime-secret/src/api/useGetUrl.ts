@@ -21,12 +21,12 @@ const sendMessage = async (message: string) => {
     const data = await res.data;
     return data;
   } catch (error) {
-      console.log("Error in sending message", error);
-      return error;
+    console.log("Error in sending message", error);
+    return error;
   }
 };
 
 export const useGetUrl = () =>
   useMutation({
-    mutationFn: (message:string) => sendMessage(message),
+    mutationFn: (message: string) => sendMessage(message),
   });
